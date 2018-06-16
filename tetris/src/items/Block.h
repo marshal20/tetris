@@ -4,6 +4,9 @@
 class Block
 {
 public:
+	Block(sf::Vector2<int> position, sf::Color color) :
+		m_position(position), m_color(color)
+	{}
 	Block();
 	virtual ~Block();
 

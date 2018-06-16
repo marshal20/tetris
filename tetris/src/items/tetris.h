@@ -17,8 +17,8 @@ public:
 
 protected:
 	std::vector<Block> m_blockList;
-	sf::Vector2<int> m_position;
-	sf::Color m_color;
+	sf::Vector2<int> m_position = {0, 0};
+	sf::Color m_color = sf::Color::Blue;
 
 	friend class BlockRenderer;
 };
