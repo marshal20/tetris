@@ -14,6 +14,8 @@ public:
 	void setPosition(sf::Vector2<int> position);
 	sf::Vector2<int> getPosition() const;
 
+	void loadFromPattern(std::string pattern, sf::Color color);
+	
 
 protected:
 	std::vector<Block> m_blockList;

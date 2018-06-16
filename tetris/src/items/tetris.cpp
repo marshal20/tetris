@@ -14,11 +14,6 @@ tetris::~tetris()
 void tetris::setColor(sf::Color value)
 {
 	m_color = value;
-
-	for (int i = 0; i < m_blockList.size(); i++)
-	{
-		m_blockList[i].m_color = value;
-	}
 }
 
 sf::Color tetris::getColor() const
@@ -28,17 +23,43 @@ sf::Color tetris::getColor() const
 
 void tetris::setPosition(sf::Vector2<int> position)
 {
-	sf::Vector2<int> offset = position - m_position;
-
-	m_position += offset;
-
-	for (int i = 0; i < m_blockList.size(); i++)
-	{
-		m_blockList[i].m_position += offset;
-	}
+	m_position = position;
 }
 
 sf::Vector2<int> tetris::getPosition() const
 {
 	return m_position;
+}
+
+void tetris::loadFromPattern(std::string pattern, sf::Color color)
+{
+	m_color = color;
+
+	m_blockList.clear();
+
+	int x = 0;
+	int y = 0;
+
+	for (char c : pattern)
+	{
+		if (c == '0')
+		{
+			x++;
+		}
+		else if(c == '1')
+		{
+			m_blockList.push_back(Block({ x,y }, sf::Color::Blue));
+
+			x++;
+		}
+		else if (c == '\n')
+		{
+			x = 0;
+			y++;
+		}
+		else
+		{
+			// TODO: Handle error
+		}
+	}
 }
