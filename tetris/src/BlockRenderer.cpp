@@ -44,7 +44,7 @@ void BlockRenderer::render(sf::RenderWindow& target_window, grid gr)
 		{
 			sf::RectangleShape rec({ (float)m_cellWidth , (float)m_cellWidth });
 			rec.setPosition(x * m_cellWidth, y * m_cellWidth);
-			rec.setFillColor(sf::Color::Black);
+			rec.setFillColor(sf::Color(50, 50, 50));
 			rec.setOutlineColor(sf::Color::White);
 			rec.setOutlineThickness(1);
 
