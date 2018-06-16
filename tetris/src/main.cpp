@@ -11,10 +11,6 @@ int main()
 	tetris tet;
 
 	tet.reset(10);
-	if (gr.checkCollision(tet))
-	{
-		// game over
-	}
 
 	sf::RenderWindow window(sf::VideoMode(200, 400), "SFML works!");
 	sf::CircleShape shape(100.f);
@@ -65,6 +61,12 @@ int main()
 				tet.setPosition(tet.getPosition() + sf::Vector2<int>(0, -1));
 				gr.add(tet);
 				tet.reset(10);
+
+				if (gr.checkCollision(tet))
+				{
+					// game over
+					gr.reset();
+				}
 			}
 			else
 			{

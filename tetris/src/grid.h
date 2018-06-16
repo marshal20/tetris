@@ -14,6 +14,8 @@ public:
 	
 	void add(tetris tet);
 
+	void reset();
+
 	sf::Vector2<int> getGridSize() const { return m_gridSize; }
 	void setGridSize(sf::Vector2<int> val) { m_gridSize = val; }
 

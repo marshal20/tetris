@@ -53,3 +53,8 @@ void grid::add(tetris tet)
 		m_blockList.push_back(b);
 	}
 }
+
+void grid::reset()
+{
+	m_blockList.clear();
+}
