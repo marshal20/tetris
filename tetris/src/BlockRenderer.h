@@ -1,5 +1,6 @@
 #pragma once
 #include "items/Block.h"
+#include "items/tetris.h"
 #include <vector>
 
 class BlockRenderer
@@ -11,6 +12,8 @@ public:
 	void start();
 
 	void submit(const Block& block);
+
+	void submit(const tetris& tet);
 
 	void end();
 

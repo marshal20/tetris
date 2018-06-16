@@ -16,6 +16,7 @@ public:
 
 	void loadFromPattern(std::string pattern, sf::Color color);
 	
+	std::vector<Block> getBlocks() const;
 
 protected:
 	std::vector<Block> m_blockList;
@@ -23,5 +24,6 @@ protected:
 	sf::Color m_color = sf::Color::Blue;
 
 	friend class BlockRenderer;
+	friend class grid;
 };
 
