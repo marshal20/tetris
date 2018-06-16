@@ -27,6 +27,9 @@ bool grid::checkCollision(Block block)
 	if (block.getPosition().y >= m_gridSize.y)
 		return true;
 
+	if (block.getPosition().x >= m_gridSize.x || block.getPosition().x < 0)
+		return true;
+
 	return false;
 }
 

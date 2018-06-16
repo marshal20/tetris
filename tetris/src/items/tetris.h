@@ -8,6 +8,11 @@ public:
 	tetris();
 	virtual ~tetris();
 
+	void reset(int width);
+
+	void left();
+	void right();
+
 	void setColor(sf::Color value);
 	sf::Color getColor() const;
 

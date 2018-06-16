@@ -7,7 +7,7 @@
 int main()
 {
 	tetris tet;
-	tet.loadFromPattern(Pattern::Z, sf::Color::Blue);
+	tet.reset(10);
 
 	sf::RenderWindow window(sf::VideoMode(200, 400), "SFML works!");
 	sf::CircleShape shape(100.f);
@@ -21,7 +21,7 @@ int main()
 
 	while (window.isOpen())
 	{
-		sf::sleep(sf::milliseconds(250));
+		sf::sleep(sf::milliseconds(100));
 
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -33,11 +33,15 @@ int main()
 				switch (event.key.code)
 				{
 				case sf::Keyboard::Right:
-					tet.setPosition(tet.getPosition() + sf::Vector2<int>(1, 0));
+					tet.right();
+					if (gr.checkCollision(tet))
+						tet.left();
 					break;
 
 				case sf::Keyboard::Left:
-					tet.setPosition(tet.getPosition() + sf::Vector2<int>(-1, 0));
+					tet.left();
+					if (gr.checkCollision(tet))
+						tet.right();
 					break;
 
 				}
@@ -47,19 +51,30 @@ int main()
 		
 		renderer.start();
 
-		tet.setPosition(tet.getPosition() + sf::Vector2<int>(0, 1));
+		static int counter = 0;
 
-		if (gr.checkCollision(tet))
+		if (counter > 2)
 		{
-			tet.setPosition(tet.getPosition() + sf::Vector2<int>(0, -1));
-			gr.add(tet);
-			tet.setPosition({ 0, 0 });
-			tet.loadFromPattern(Pattern::L, sf::Color::Green);
+			tet.setPosition(tet.getPosition() + sf::Vector2<int>(0, 1));
+
+			if (gr.checkCollision(tet))
+			{
+				tet.setPosition(tet.getPosition() + sf::Vector2<int>(0, -1));
+				gr.add(tet);
+				tet.reset(10);
+			}
+			else
+			{
+				renderer.submit(tet);
+			}
+			counter = 0;
 		}
 		else
 		{
 			renderer.submit(tet);
 		}
+
+		counter++;
 
 		gr.update();
 

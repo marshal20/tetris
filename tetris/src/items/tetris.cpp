@@ -1,6 +1,6 @@
 #include "tetris.h"
-
-
+#include "Objects.h"
+#include <time.h>
 
 tetris::tetris()
 {
@@ -9,6 +9,33 @@ tetris::tetris()
 
 tetris::~tetris()
 {
+}
+
+void tetris::reset(int width)
+{
+	srand(time(NULL));
+
+	m_position = { rand() % (width - 4) , -1 };
+
+	static const char* pos_pat[] = { Pattern::I , Pattern::J , Pattern::L ,
+									Pattern::O ,Pattern::S ,Pattern::T, Pattern::Z };
+
+	static const sf::Color pos_color[] = { sf::Color::Cyan , sf::Color::Blue , sf::Color(255, 127, 39),
+								sf::Color::Yellow , sf::Color::Green , sf::Color(163, 73, 164) , sf::Color::Red };
+
+	int no = rand() % 7;
+
+	loadFromPattern(pos_pat[no], pos_color[no]);
+}
+
+void tetris::left()
+{
+	m_position.x += -1;
+}
+
+void tetris::right()
+{
+	m_position.x += 1;
 }
 
 void tetris::setColor(sf::Color value)
