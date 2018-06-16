@@ -8,12 +8,18 @@ public:
 	grid();
 	~grid();
 
-	void update();
+	int update();
 	bool checkCollision(Block block);
 	bool checkCollision(tetris tet);
 	
+	void add(tetris tet);
+
+	sf::Vector2<int> getGridSize() const { return m_gridSize; }
+	void setGridSize(sf::Vector2<int> val) { m_gridSize = val; }
+
 private:
 	std::vector<Block> m_blockList;
+	sf::Vector2<int> m_gridSize;
 
 	friend class BlockRenderer;
 };

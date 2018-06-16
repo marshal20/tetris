@@ -11,9 +11,9 @@ grid::~grid()
 {
 }
 
-void grid::update()
+int grid::update()
 {
-
+	return 0;
 }
 
 bool grid::checkCollision(Block block)
@@ -24,16 +24,29 @@ bool grid::checkCollision(Block block)
 			return true;
 	}
 
+	if (block.getPosition().y >= m_gridSize.y)
+		return true;
+
 	return false;
 }
 
 bool grid::checkCollision(tetris tet)
 {
-	for (Block b : tet.m_blockList)
+	auto blocks = tet.getBlocks();
+	for (Block b : blocks)
 	{
 		if (checkCollision(b))
 			return true;
 	}
 
 	return false;
+}
+
+void grid::add(tetris tet)
+{
+	auto blocks = tet.getBlocks();
+	for (Block b : blocks)
+	{
+		m_blockList.push_back(b);
+	}
 }

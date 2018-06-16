@@ -30,20 +30,17 @@ void BlockRenderer::submit(const tetris& tet)
 	}
 }
 
-void BlockRenderer::submit(const grid & gr)
-{
-}
 
 void BlockRenderer::end()
 {
 
 }
 
-void BlockRenderer::render(sf::RenderWindow& target_window)
+void BlockRenderer::render(sf::RenderWindow& target_window, grid gr)
 {
-	for (int x = 0; x < m_gridSize.x; x++)
+	for (int x = 0; x < gr.m_gridSize.x; x++)
 	{
-		for (int y = 0; y < m_gridSize.y; y++)
+		for (int y = 0; y < gr.m_gridSize.y; y++)
 		{
 			sf::RectangleShape rec({ (float)m_cellWidth , (float)m_cellWidth });
 			rec.setPosition(x * m_cellWidth, y * m_cellWidth);
@@ -53,6 +50,11 @@ void BlockRenderer::render(sf::RenderWindow& target_window)
 
 			target_window.draw(rec);
 		}
+	}
+
+	for (Block b : gr.m_blockList)
+	{
+		m_blockList.push_back(b);
 	}
 
 	for (Block b : m_blockList)
