@@ -4,6 +4,8 @@
 #include "items/tetris.h"
 #include "items/Objects.h"
 
+// https://en.wikipedia.org/wiki/Tetris
+
 int main()
 {
 	BlockRenderer renderer;
