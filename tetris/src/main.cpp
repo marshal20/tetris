@@ -6,17 +6,23 @@
 
 int main()
 {
+	BlockRenderer renderer;
+	grid gr;
 	tetris tet;
+
 	tet.reset(10);
+	if (gr.checkCollision(tet))
+	{
+		// game over
+	}
 
 	sf::RenderWindow window(sf::VideoMode(200, 400), "SFML works!");
 	sf::CircleShape shape(100.f);
 	shape.setFillColor(sf::Color::Green);
 	
-	grid gr;
+	
 	gr.setGridSize({ 10, 20 });
 
-	BlockRenderer renderer;
 	renderer.setCellWidth(20);
 
 	while (window.isOpen())
@@ -43,10 +49,7 @@ int main()
 					if (gr.checkCollision(tet))
 						tet.right();
 					break;
-
 				}
-
-			
 		}
 		
 		renderer.start();
