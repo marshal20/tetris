@@ -20,6 +20,10 @@ public:
 	void setGridSize(sf::Vector2<int> val) { m_gridSize = val; }
 
 private:
+	int getLineBlockCount(int lineNo) const;
+	void removeLine(int lineNo);
+
+private:
 	std::vector<Block> m_blockList;
 	sf::Vector2<int> m_gridSize;
 

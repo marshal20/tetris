@@ -12,9 +12,7 @@ int main()
 
 	tet.reset(10);
 
-	sf::RenderWindow window(sf::VideoMode(200, 400), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	sf::RenderWindow window(sf::VideoMode(200, 400), "Tetris");
 	
 	
 	gr.setGridSize({ 10, 20 });

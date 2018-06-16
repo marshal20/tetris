@@ -13,6 +13,15 @@ grid::~grid()
 
 int grid::update()
 {
+	for (int y = 0; y < m_gridSize.y; y++)
+	{
+		if (getLineBlockCount(y) == m_gridSize.x)
+		{
+			removeLine(y);
+		}
+	}
+
+
 	return 0;
 }
 
@@ -57,4 +66,33 @@ void grid::add(tetris tet)
 void grid::reset()
 {
 	m_blockList.clear();
+}
+
+int grid::getLineBlockCount(int lineNo) const
+{
+	int result = 0;
+	for (Block b : m_blockList)
+	{
+		if (b.getPosition().y == lineNo)
+			result++;
+	}
+
+	return result;
+}
+
+void grid::removeLine(int lineNo)
+{
+	auto new_end = std::remove_if(m_blockList.begin(), m_blockList.end(), [lineNo](const Block& b) {
+		return (b.getPosition().y == lineNo);
+	});
+
+	m_blockList.erase(new_end, m_blockList.end());
+
+	for (Block& b : m_blockList)
+	{
+		if (b.getPosition().y < lineNo)
+		{
+			b.setPosition(b.getPosition() + sf::Vector2<int>({ 0, 1 }));
+		}
+	}
 }
