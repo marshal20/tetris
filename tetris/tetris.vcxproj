@@ -149,13 +149,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\grid.cpp" />
     <ClCompile Include="src\BlockRenderer.cpp" />
-    <ClCompile Include="src\Block.cpp" />
+    <ClCompile Include="src\items\Block.cpp" />
+    <ClCompile Include="src\items\Objects.cpp" />
+    <ClCompile Include="src\items\tetris.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\grid.h" />
     <ClInclude Include="src\BlockRenderer.h" />
-    <ClInclude Include="src\Block.h" />
+    <ClInclude Include="src\items\Block.h" />
+    <ClInclude Include="src\items\Objects.h" />
+    <ClInclude Include="src\items\tetris.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

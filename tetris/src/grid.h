@@ -1,5 +1,6 @@
 #pragma once
 #include "items/Block.h"
+#include "items/tetris.h"
 
 class grid
 {
@@ -14,6 +15,6 @@ public:
 private:
 	std::vector<Block> m_blockList;
 
-	friend class BlockRenderer
+	friend class BlockRenderer;
 };
 
