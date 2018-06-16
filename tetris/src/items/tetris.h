@@ -1,19 +1,22 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include <vector>
+#include "Block.h"
 
-class Block
+class tetris
 {
 public:
-	Block();
-	virtual ~Block();
-
-	void setPosition(sf::Vector2<int> position);
-	sf::Vector2<int> getPosition() const;
+	tetris();
+	virtual ~tetris();
 
 	void setColor(sf::Color value);
 	sf::Color getColor() const;
 
-private:
+	void setPosition(sf::Vector2<int> position);
+	sf::Vector2<int> getPosition() const;
+
+
+protected:
+	std::vector<Block> m_blockList;
 	sf::Vector2<int> m_position;
 	sf::Color m_color;
 
