@@ -92,7 +92,7 @@ void grid::removeLine(int lineNo)
 	{
 		if (b.getPosition().y < lineNo)
 		{
-			b.setPosition(b.getPosition() + sf::Vector2<int>({ 0, 1 }));
+			b.setPosition(b.getPosition() + sf::Vector2i({ 0, 1 }));
 		}
 	}
 }

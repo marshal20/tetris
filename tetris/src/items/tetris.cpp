@@ -17,15 +17,9 @@ void tetris::reset(int width)
 
 	m_position = { rand() % (width - 4) , -1 };
 
-	static const char* pos_pat[] = { Pattern::I , Pattern::J , Pattern::L ,
-									Pattern::O ,Pattern::S ,Pattern::T, Pattern::Z };
+	int no = rand() % Constants::NumberOfPoss;
 
-	static const sf::Color pos_color[] = { sf::Color::Cyan , sf::Color::Blue , sf::Color(255, 127, 39),
-								sf::Color::Yellow , sf::Color::Green , sf::Color(163, 73, 164) , sf::Color::Red };
-
-	int no = rand() % 7;
-
-	loadFromPattern(pos_pat[no], pos_color[no]);
+	loadFromPattern(Constants::Patterns::Poss[no], Constants::Color::Poss[no]);
 }
 
 void tetris::left()
@@ -38,27 +32,17 @@ void tetris::right()
 	m_position.x += 1;
 }
 
-void tetris::setColor(sf::Color value)
+void tetris::up()
 {
-	m_color = value;
+	m_position.y += 1;
 }
 
-sf::Color tetris::getColor() const
+void tetris::down()
 {
-	return m_color;
+	m_position.y += -1;
 }
 
-void tetris::setPosition(sf::Vector2<int> position)
-{
-	m_position = position;
-}
-
-sf::Vector2<int> tetris::getPosition() const
-{
-	return m_position;
-}
-
-void tetris::loadFromPattern(std::string pattern, sf::Color color)
+void tetris::loadFromPattern(const std::string& pattern, sf::Color color)
 {
 	m_color = color;
 
@@ -66,6 +50,10 @@ void tetris::loadFromPattern(std::string pattern, sf::Color color)
 
 	int x = 0;
 	int y = 0;
+
+	//	0 : is an empty space
+	//	1 : is a block
+	//	\n : is a new line
 
 	for (char c : pattern)
 	{
@@ -76,7 +64,6 @@ void tetris::loadFromPattern(std::string pattern, sf::Color color)
 		else if(c == '1')
 		{
 			m_blockList.push_back(Block({ x,y }, sf::Color::Blue));
-
 			x++;
 		}
 		else if (c == '\n')
@@ -84,21 +71,17 @@ void tetris::loadFromPattern(std::string pattern, sf::Color color)
 			x = 0;
 			y++;
 		}
-		else
-		{
-			// TODO: Handle error
-		}
 	}
 }
 
-std::vector<Block> tetris::getBlocks() const
+BlockList tetris::getBlocks() const
 {
-	std::vector<Block> result = m_blockList;
+	BlockList result = m_blockList;
 
-	for (int i = 0; i < result.size(); i++)
+	for (Block& b : result)
 	{
-		result[i].m_position += m_position;
-		result[i].m_color = m_color;
+		b.setPosition(b.getPosition() + m_position);
+		b.setColor(m_color);
 	}
 
 	return result;
