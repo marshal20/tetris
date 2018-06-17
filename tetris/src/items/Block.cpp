@@ -1,22 +1,20 @@
 #include "Block.h"
 
-
-
-Block::Block()
+Block::Block(sf::Vector2i position, sf::Color color) :
+	m_position(position), m_color(color)
 {
 }
-
 
 Block::~Block()
 {
 }
 
-void Block::setPosition(sf::Vector2<int> position)
+void Block::setPosition(sf::Vector2i position)
 {
 	m_position = position;
 }
 
-sf::Vector2<int> Block::getPosition() const
+sf::Vector2i Block::getPosition() const
 {
 	return m_position;
 }

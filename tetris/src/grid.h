@@ -16,16 +16,16 @@ public:
 
 	void reset();
 
-	sf::Vector2<int> getGridSize() const { return m_gridSize; }
-	void setGridSize(sf::Vector2<int> val) { m_gridSize = val; }
+	sf::Vector2i getGridSize() const { return m_gridSize; }
+	void setGridSize(sf::Vector2i val) { m_gridSize = val; }
 
 private:
 	int getLineBlockCount(int lineNo) const;
 	void removeLine(int lineNo);
 
 private:
-	std::vector<Block> m_blockList;
-	sf::Vector2<int> m_gridSize;
+	BlockList m_blockList;
+	sf::Vector2i m_gridSize;
 
 	friend class BlockRenderer;
 };

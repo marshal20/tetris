@@ -23,7 +23,7 @@ public:
 	void setCellWidth(int val) { m_cellWidth = val; }
 
 private:
-	std::vector<Block> m_blockList;
+	BlockList m_blockList;
 	int m_cellWidth;
 
 };

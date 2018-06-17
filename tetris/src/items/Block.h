@@ -4,23 +4,21 @@
 class Block
 {
 public:
-	Block(sf::Vector2<int> position, sf::Color color) :
-		m_position(position), m_color(color)
-	{}
-	Block();
+	Block(sf::Vector2i position = sf::Vector2i(0, 0), sf::Color color = sf::Color::Black);
 	virtual ~Block();
 
-	void setPosition(sf::Vector2<int> position);
-	sf::Vector2<int> getPosition() const;
+	void setPosition(sf::Vector2i position);
+	sf::Vector2i getPosition() const;
 
 	void setColor(sf::Color value);
 	sf::Color getColor() const;
 
 private:
-	sf::Vector2<int> m_position;
+	sf::Vector2i m_position;
 	sf::Color m_color;
 
 	friend class BlockRenderer;
-	friend class tetris;
 };
+
+using BlockList = std::vector<Block>;
 
