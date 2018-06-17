@@ -155,6 +155,7 @@
     <ClCompile Include="src\items\Objects.cpp" />
     <ClCompile Include="src\items\tetris.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\scene\scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\grid.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="src\items\Block.h" />
     <ClInclude Include="src\items\Objects.h" />
     <ClInclude Include="src\items\tetris.h" />
+    <ClInclude Include="src\scene\scene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
