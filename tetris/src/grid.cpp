@@ -13,16 +13,18 @@ grid::~grid()
 
 int grid::update()
 {
+	int lineCleared = 0;
+
 	for (int y = 0; y < m_gridSize.y; y++)
 	{
 		if (getLineBlockCount(y) == m_gridSize.x)
 		{
 			removeLine(y);
+			lineCleared++;
 		}
 	}
 
-
-	return 0;
+	return lineCleared;
 }
 
 bool grid::checkCollision(Block block)
