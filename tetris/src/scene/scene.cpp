@@ -1,8 +1,9 @@
 #include "scene.h"
+#include <iostream>
 
 Scene::Scene()
 {
-	m_prevTime = m_clock.getElapsedTime();
+	m_cur = sf::Time::Zero;
 }
 
 Scene::~Scene()
@@ -12,16 +13,27 @@ Scene::~Scene()
 std::shared_ptr<Scene> Scene::run(sf::RenderWindow & window)
 {
 	m_nextScene = 0;
-
-	sf::Time cur = m_clock.getElapsedTime();
-	sf::Time delta = cur - m_prevTime;
-	m_prevTime = cur;
 	
 	while (window.isOpen() && !m_nextScene)
 	{
-		update(cur.asSeconds(), delta.asSeconds());
+		// handling time
+		sf::Time delta = m_clock.restart();
+		m_cur += delta;
 
-		window.clear();
+		// handling events
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+			else
+				input(event);
+		}
+
+		// updating
+		update(m_cur.asSeconds(), delta.asSeconds());
+
+		// rendering
 		render(window);
 		window.display();
 

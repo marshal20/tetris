@@ -16,7 +16,6 @@ int main()
 
 	sf::RenderWindow window(sf::VideoMode(200, 400), "Tetris");
 	
-	
 	gr.setGridSize({ 10, 20 });
 
 	renderer.setCellWidth(20);
