@@ -54,11 +54,11 @@ int main()
 
 		if (counter > 2)
 		{
-			tet.setPosition(tet.getPosition() + sf::Vector2i(0, 1));
+			tet.up();
 
 			if (gr.checkCollision(tet))
 			{
-				tet.setPosition(tet.getPosition() + sf::Vector2i(0, -1));
+				tet.down();
 				gr.add(tet);
 				tet.reset(10);
 

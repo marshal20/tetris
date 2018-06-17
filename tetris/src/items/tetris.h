@@ -15,11 +15,11 @@ public:
 	void up();
 	void down();
 
-	void setColor(sf::Color value);
-	sf::Color getColor() const;
+	void setColor(sf::Color value) { m_color = value; }
+	sf::Color getColor() const { return m_color; }
 
-	void setPosition(sf::Vector2i position);
-	sf::Vector2i getPosition() const;
+	void setPosition(sf::Vector2i position){ m_position = position; }
+	sf::Vector2i getPosition() const { return m_position; }
 
 	void loadFromPattern(const std::string& pattern, sf::Color color);
 	

@@ -44,9 +44,9 @@ void BlockRenderer::render(sf::RenderWindow& target_window, grid gr)
 		{
 			sf::RectangleShape rec({ (float)m_cellWidth , (float)m_cellWidth });
 			rec.setPosition(x * m_cellWidth, y * m_cellWidth);
-			rec.setFillColor(sf::Color(50, 50, 50));
-			rec.setOutlineColor(sf::Color::White);
-			rec.setOutlineThickness(1);
+			rec.setFillColor(getBackgroundColor());
+			rec.setOutlineColor(getBoarderColor());
+			rec.setOutlineThickness(getBoarderThickness());
 
 			target_window.draw(rec);
 		}
@@ -62,8 +62,8 @@ void BlockRenderer::render(sf::RenderWindow& target_window, grid gr)
 		sf::RectangleShape rec({ (float)m_cellWidth , (float)m_cellWidth });
 		rec.setPosition(b.m_position.x * m_cellWidth, b.m_position.y * m_cellWidth);
 		rec.setFillColor(b.m_color);
-		rec.setOutlineColor(sf::Color::White);
-		rec.setOutlineThickness(1);
+		rec.setOutlineColor(getBoarderColor());
+		rec.setOutlineThickness(getBoarderThickness());
 
 		target_window.draw(rec);
 	}
