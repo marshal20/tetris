@@ -30,6 +30,10 @@ void Game::input(sf::Event event)
 			if (m_gr.checkCollision(m_tet))
 				m_tet.right();
 			break;
+
+		case sf::Keyboard::P:
+			m_nextScene = std::make_shared<Game>();
+			break;
 		}
 }
 

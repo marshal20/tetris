@@ -14,7 +14,7 @@ std::shared_ptr<Scene> Scene::run(sf::RenderWindow & window)
 {
 	m_nextScene = 0;
 	
-	while (window.isOpen() && !m_nextScene)
+	while (window.isOpen() && !m_nextScene && !m_exit)
 	{
 		// handling time
 		sf::Time delta = m_clock.restart();

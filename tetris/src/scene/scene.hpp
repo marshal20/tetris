@@ -18,6 +18,7 @@ protected:
 
 protected:
 	std::shared_ptr<Scene> m_nextScene;
+	bool m_exit = false;
 
 private:
 	sf::Clock m_clock;
