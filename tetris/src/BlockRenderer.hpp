@@ -1,7 +1,7 @@
 #pragma once
-#include "items/Block.h"
-#include "items/tetris.h"
-#include "grid.h"
+#include "items/Block.hpp"
+#include "items/tetris.hpp"
+#include "grid.hpp"
 #include <vector>
 
 class BlockRenderer

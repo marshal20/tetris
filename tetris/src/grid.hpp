@@ -1,6 +1,6 @@
 #pragma once
-#include "items/Block.h"
-#include "items/tetris.h"
+#include "items/Block.hpp"
+#include "items/tetris.hpp"
 
 class grid
 {

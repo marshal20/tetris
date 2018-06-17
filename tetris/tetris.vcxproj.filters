@@ -41,25 +41,25 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\BlockRenderer.h">
+    <ClInclude Include="src\scene\scene.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\items\tetris.h">
+    <ClInclude Include="src\BlockRenderer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\items\Block.h">
+    <ClInclude Include="src\grid.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\grid.h">
+    <ClInclude Include="src\scene\game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\items\Objects.h">
+    <ClInclude Include="src\items\Block.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\scene\scene.h">
+    <ClInclude Include="src\items\Objects.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\scene\game.h">
+    <ClInclude Include="src\items\tetris.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

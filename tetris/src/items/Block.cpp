@@ -1,4 +1,4 @@
-#include "Block.h"
+#include "Block.hpp"
 
 Block::Block(sf::Vector2i position, sf::Color color) :
 	m_position(position), m_color(color)

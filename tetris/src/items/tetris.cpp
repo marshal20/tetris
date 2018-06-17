@@ -1,5 +1,5 @@
-#include "tetris.h"
-#include "Objects.h"
+#include "tetris.hpp"
+#include "Objects.hpp"
 #include <time.h>
 
 tetris::tetris()

@@ -159,13 +159,13 @@
     <ClCompile Include="src\scene\scene.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\grid.h" />
-    <ClInclude Include="src\BlockRenderer.h" />
-    <ClInclude Include="src\items\Block.h" />
-    <ClInclude Include="src\items\Objects.h" />
-    <ClInclude Include="src\items\tetris.h" />
-    <ClInclude Include="src\scene\game.h" />
-    <ClInclude Include="src\scene\scene.h" />
+    <ClInclude Include="src\grid.hpp" />
+    <ClInclude Include="src\BlockRenderer.hpp" />
+    <ClInclude Include="src\items\Block.hpp" />
+    <ClInclude Include="src\items\Objects.hpp" />
+    <ClInclude Include="src\items\tetris.hpp" />
+    <ClInclude Include="src\scene\game.hpp" />
+    <ClInclude Include="src\scene\scene.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

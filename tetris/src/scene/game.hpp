@@ -1,7 +1,7 @@
 #pragma once
-#include "scene.h"
-#include "../BlockRenderer.h"
-#include "../items/tetris.h"
+#include "scene.hpp"
+#include "../BlockRenderer.hpp"
+#include "../items/tetris.hpp"
 
 class Game : public Scene
 {
