@@ -39,6 +39,12 @@ void Game::input(sf::Event event)
 				m_tet.rotate(tetris::RotationDirection::CounterClockWise);
 			break;
 
+		case sf::Keyboard::Down:
+			m_tet.down();
+			if (m_gr.checkCollision(m_tet))
+				m_tet.up();
+			break;
+
 		case sf::Keyboard::P:
 			m_nextScene = std::make_shared<Game>();
 			break;
