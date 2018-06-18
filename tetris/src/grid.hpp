@@ -16,8 +16,8 @@ public:
 
 	void reset();
 
-	sf::Vector2i getGridSize() const { return m_gridSize; }
-	void setGridSize(sf::Vector2i val) { m_gridSize = val; }
+	sf::Vector2i getGridSize() const;
+	void setGridSize(sf::Vector2i val);
 
 private:
 	int getLineBlockCount(int lineNo) const;

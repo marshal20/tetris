@@ -68,3 +68,43 @@ void BlockRenderer::render(sf::RenderWindow& target_window, grid gr)
 		target_window.draw(rec);
 	}
 }
+
+int BlockRenderer::getCellWidth() const
+{
+	return m_cellWidth;
+}
+
+void BlockRenderer::setCellWidth(int val)
+{
+	m_cellWidth = val;
+}
+
+sf::Color BlockRenderer::getBackgroundColor() const
+{
+	return m_backgroundColor;
+}
+
+void BlockRenderer::setBackgroundColor(sf::Color val)
+{
+	m_backgroundColor = val;
+}
+
+sf::Color BlockRenderer::getBoarderColor() const
+{
+	return m_boarderColor;
+}
+
+void BlockRenderer::setBoarderColor(sf::Color val)
+{
+	m_boarderColor = val;
+}
+
+int BlockRenderer::getBoarderThickness() const
+{
+	return m_boarderThickness;
+}
+
+void BlockRenderer::setBoarderThickness(int val)
+{
+	m_boarderThickness = val;
+}

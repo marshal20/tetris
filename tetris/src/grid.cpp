@@ -70,6 +70,16 @@ void grid::reset()
 	m_blockList.clear();
 }
 
+sf::Vector2i grid::getGridSize() const
+{
+	return m_gridSize;
+}
+
+void grid::setGridSize(sf::Vector2i val)
+{
+	m_gridSize = val;
+}
+
 int grid::getLineBlockCount(int lineNo) const
 {
 	int result = 0;

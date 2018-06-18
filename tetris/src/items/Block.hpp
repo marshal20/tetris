@@ -7,11 +7,11 @@ public:
 	Block(sf::Vector2i position = sf::Vector2i(0, 0), sf::Color color = sf::Color::Black);
 	virtual ~Block();
 
-	void setColor(sf::Color value) { m_color = value; }
-	sf::Color getColor() const { return m_color; }
+	void setColor(sf::Color value);
+	sf::Color getColor() const;
 
-	void setPosition(sf::Vector2i position) { m_position = position; }
-	sf::Vector2i getPosition() const { return m_position; }
+	void setPosition(sf::Vector2i position);
+	sf::Vector2i getPosition() const;
 
 private:
 	sf::Vector2i m_position;

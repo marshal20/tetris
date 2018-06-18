@@ -42,6 +42,26 @@ void tetris::down()
 	m_position.y += -1;
 }
 
+void tetris::setColor(sf::Color value)
+{
+	m_color = value;
+}
+
+sf::Color tetris::getColor() const
+{
+	return m_color;
+}
+
+void tetris::setPosition(sf::Vector2i position)
+{
+	m_position = position;
+}
+
+sf::Vector2i tetris::getPosition() const
+{
+	return m_position;
+}
+
 void tetris::loadFromPattern(const std::string& pattern, sf::Color color)
 {
 	m_color = color;

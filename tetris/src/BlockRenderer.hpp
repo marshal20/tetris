@@ -19,17 +19,17 @@ public:
 
 	void render(sf::RenderWindow& target_window, grid gr);
 	
-	int getCellWidth() const { return m_cellWidth; }
-	void setCellWidth(int val) { m_cellWidth = val; }
+	int getCellWidth() const;
+	void setCellWidth(int val);
 
-	sf::Color getBackgroundColor() const { return m_backgroundColor; }
-	void setBackgroundColor(sf::Color val) { m_backgroundColor = val; }
+	sf::Color getBackgroundColor() const;
+	void setBackgroundColor(sf::Color val);
 
-	sf::Color getBoarderColor() const { return m_boarderColor; }
-	void setBoarderColor(sf::Color val) { m_boarderColor = val; }
+	sf::Color getBoarderColor() const;
+	void setBoarderColor(sf::Color val);
 
-	int getBoarderThickness() const { return m_boarderThickness; }
-	void setBoarderThickness(int val) { m_boarderThickness = val; }
+	int getBoarderThickness() const;
+	void setBoarderThickness(int val);
 
 private:
 	BlockList m_blockList;
