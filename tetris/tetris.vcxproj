@@ -157,6 +157,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\scene\game.cpp" />
     <ClCompile Include="src\scene\scene.cpp" />
+    <ClCompile Include="src\timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\grid.hpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="src\items\tetris.hpp" />
     <ClInclude Include="src\scene\game.hpp" />
     <ClInclude Include="src\scene\scene.hpp" />
+    <ClInclude Include="src\timer.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

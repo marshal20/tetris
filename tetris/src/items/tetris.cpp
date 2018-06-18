@@ -32,12 +32,12 @@ void tetris::right()
 	m_position.x += 1;
 }
 
-void tetris::up()
+void tetris::down()
 {
 	m_position.y += 1;
 }
 
-void tetris::down()
+void tetris::up()
 {
 	m_position.y += -1;
 }

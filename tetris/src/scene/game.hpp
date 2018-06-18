@@ -2,6 +2,7 @@
 #include "scene.hpp"
 #include "../BlockRenderer.hpp"
 #include "../items/tetris.hpp"
+#include "../timer.hpp"
 
 class Game : public Scene
 {
@@ -18,5 +19,5 @@ private:
 	BlockRenderer m_renderer;
 	grid m_gr;
 	tetris m_tet;
-
+	Timer m_tetrisTimer;
 };

@@ -7,6 +7,8 @@ Game::Game()
 	m_gr.setGridSize({ 10, 20 });
 
 	m_renderer.setCellWidth(20);
+
+	m_tetrisTimer.setInterval(1.0f / 1.0f); // interval = 1 / speed
 }
 
 Game::~Game()
@@ -41,17 +43,13 @@ void Game::update(float time, float deltaTime)
 {
 	sf::sleep(sf::milliseconds(100));
 
-	m_renderer.start();
-
-	static int counter = 0;
-
-	if (counter > 2)
+	if (m_tetrisTimer)
 	{
-		m_tet.up();
+		m_tet.down();
 
 		if (m_gr.checkCollision(m_tet))
 		{
-			m_tet.down();
+			m_tet.up();
 			m_gr.add(m_tet);
 			m_tet.reset(10);
 
@@ -61,24 +59,18 @@ void Game::update(float time, float deltaTime)
 				m_gr.reset();
 			}
 		}
-		else
-		{
-			m_renderer.submit(m_tet);
-		}
-		counter = 0;
 	}
-	else
-	{
-		m_renderer.submit(m_tet);
-	}
-
-	counter++;
+	
 	m_gr.update();
-	m_renderer.end();
+	
 }
 
 void Game::render(sf::RenderWindow& window)
 {
+	m_renderer.start();
+	m_renderer.submit(m_tet);
+	m_renderer.end();
+
 	window.clear();
 	m_renderer.render(window, m_gr);
 }
