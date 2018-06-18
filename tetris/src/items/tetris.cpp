@@ -19,7 +19,7 @@ void tetris::reset(int width)
 
 	int no = rand() % Constants::NumberOfPoss;
 
-	loadFromPattern(Constants::Patterns::Poss[no], Constants::Color::Poss[no]);
+	loadFromPattern(Constants::Patterns::Poss[no], Constants::Color::Poss[no], Constants::Origin::Poss[no]);
 }
 
 void tetris::left()
@@ -35,6 +35,27 @@ void tetris::right()
 void tetris::down()
 {
 	m_position.y += 1;
+}
+
+void tetris::rotate(RotationDirection dir)
+{
+	//x' = x cos f - y sin f
+	//y' = y cos f + x sin f
+
+	if (m_origin.x == -1 || m_origin.y == -1)
+		return;
+
+	int mul = (dir==RotationDirection::ClockWise) ? 1 : -1;
+
+	for (Block& b : m_blockList)
+	{
+		sf::Vector2i oldPos = b.getPosition();
+		oldPos -= m_origin;
+		sf::Vector2i newPos = { -mul*oldPos.y, +mul*oldPos.x };
+		newPos += m_origin;
+
+		b.setPosition(newPos);
+	}
 }
 
 void tetris::up()
@@ -62,9 +83,10 @@ sf::Vector2i tetris::getPosition() const
 	return m_position;
 }
 
-void tetris::loadFromPattern(const std::string& pattern, sf::Color color)
+void tetris::loadFromPattern(const std::string& pattern, sf::Color color, sf::Vector2i origin)
 {
 	m_color = color;
+	m_origin = origin;
 
 	m_blockList.clear();
 

@@ -29,4 +29,17 @@ namespace Constants
 
 		const sf::Color Poss[] = { I, J, L, O , S, T, Z };
 	}
+
+	namespace Origin
+	{
+		const sf::Vector2i I = { 2, 0 };
+		const sf::Vector2i J = { 2, 0 };
+		const sf::Vector2i L = { 0, 0 };
+		const sf::Vector2i O = { -1, -1 };
+		const sf::Vector2i S = { 1, 1 };
+		const sf::Vector2i T = { 1, 0 };
+		const sf::Vector2i Z = { 1, 1 };
+
+		const sf::Vector2i Poss[] = { I, J, L, O , S, T, Z };
+	}
 }

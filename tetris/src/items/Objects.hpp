@@ -31,5 +31,17 @@ namespace Constants
 		extern const sf::Color Poss[];
 	}
 
+	namespace Origin
+	{
+		extern const sf::Vector2i I;
+		extern const sf::Vector2i J;
+		extern const sf::Vector2i L;
+		extern const sf::Vector2i O;
+		extern const sf::Vector2i S;
+		extern const sf::Vector2i T;
+		extern const sf::Vector2i Z;
+
+		extern const sf::Vector2i Poss[];
+	}
 }
 
