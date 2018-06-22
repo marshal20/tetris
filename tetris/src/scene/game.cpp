@@ -1,4 +1,6 @@
 #include "game.hpp"
+#include "pause.hpp"
+#include <memory>
 
 Game::Game()
 {
@@ -46,7 +48,8 @@ void Game::input(sf::Event event)
 			break;
 
 		case sf::Keyboard::P:
-			setNextScene(std::make_shared<Game>());
+			setNextScene(std::make_shared<Pause>());
+			setDone(false);
 			break;
 		}
 }

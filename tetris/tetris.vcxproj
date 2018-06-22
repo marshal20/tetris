@@ -156,6 +156,7 @@
     <ClCompile Include="src\items\tetris.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\scene\game.cpp" />
+    <ClCompile Include="src\scene\pause.cpp" />
     <ClCompile Include="src\scene\scene.cpp" />
     <ClCompile Include="src\scene\sceneRunner.cpp" />
     <ClCompile Include="src\timer.cpp" />
