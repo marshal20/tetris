@@ -46,7 +46,7 @@ void Game::input(sf::Event event)
 			break;
 
 		case sf::Keyboard::P:
-			m_nextScene = std::make_shared<Game>();
+			setNextScene(std::make_shared<Game>());
 			break;
 		}
 }

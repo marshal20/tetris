@@ -41,3 +41,28 @@ std::shared_ptr<Scene> Scene::run(sf::RenderWindow & window)
 
 	return m_nextScene;
 }
+
+std::shared_ptr<Scene> Scene::getNextScene()
+{
+	return m_nextScene;
+}
+
+bool Scene::isDone()
+{
+	return m_done;
+}
+
+void Scene::setNextScene(std::shared_ptr<Scene> scene)
+{
+	m_nextScene = scene;
+}
+
+void Scene::exit()
+{
+	m_exit = true;
+}
+
+void Scene::setDone(bool value)
+{
+	m_done = value;
+}
